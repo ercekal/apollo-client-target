@@ -1,13 +1,14 @@
 import React from 'react'
 
 interface OutcomeProps {
-  inputText: string
+  firstName: string
+  label: string
 }
 
-const Outcome = ({ inputText }: OutcomeProps) => {
+const Outcome = ({ firstName, label }: OutcomeProps) => {
   return (
     <div>
-      {inputText}
+      {label}: {firstName}
     </div>
   )
 }

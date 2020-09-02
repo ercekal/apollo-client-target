@@ -2,22 +2,24 @@ import React, { useState } from 'react'
 import './TextInput.scss'
 
 interface TextInputProps {
-  inputText: string
-  onSave: (text: string) => any
+  value: string
+  label: string
+  type: 'fname' | 'lname'
+  onSave: (text: string, type: 'fname' | 'lname') => any
 }
 
-const TextInput = ({ inputText, onSave }: TextInputProps) => {
-  const [text, setText] = useState<string>(inputText)
+const TextInput = ({ value, onSave, label, type }: TextInputProps) => {
+  const [text, setText] = useState<string>(value)
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
-    onSave(text)
+    onSave(text, type)
   }
   return (
     <form onSubmit={handleSubmit}>
-      <label>Enter name</label>
+      <label>{label}</label>
       <input
-        className={`textInput${inputText !== text ? '--changed' : ''}`}
+        className={`textInput${value !== text ? '--changed' : ''}`}
         type="text"
         value={text}
         onChange={e => setText(e.target.value)}

@@ -1,6 +1,6 @@
 
-import { inputVar } from '../cache'
+import { firstNameVar, lastNameVar } from '../cache'
 
-export default function updateInput (text: string) {
-  return inputVar(text);
+export default function updateInput (text: string, type: string) {
+  return type === 'fname' ? firstNameVar(text) : lastNameVar(text);
 }

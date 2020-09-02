@@ -5,9 +5,14 @@ export const cache: InMemoryCache = new InMemoryCache({
   typePolicies: {
     Query: {
       fields: {
-        inputText: {
+        firstName: {
           read () {
-            return inputVar();
+            return firstNameVar();
+          }
+        },
+        lastName: {
+          read () {
+            return lastNameVar();
           }
         },
       }
@@ -19,8 +24,13 @@ export const cache: InMemoryCache = new InMemoryCache({
  * Set initial values when we create cache variables.
  */
 
-const inputInitialValue: String = 'Example text'
+const firstNameInitialValue: String = 'Enter first name'
+const lastNameInitialValue: String = 'Enter last name'
 
-export const inputVar: ReactiveVar<String> = makeVar<String>(
-  inputInitialValue
+export const firstNameVar: ReactiveVar<String> = makeVar<String>(
+  firstNameInitialValue
+);
+
+export const lastNameVar: ReactiveVar<String> = makeVar<String>(
+  lastNameInitialValue
 );

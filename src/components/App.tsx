@@ -11,8 +11,10 @@ function App() {
 
   return (
     <div className="App">
-      <TextInput onSave={updateInput} inputText={data.inputText}/>
-      <Outcome inputText={data.inputText}/>
+      <TextInput onSave={updateInput} value={data.firstName} label='First name' type='fname' />
+      <TextInput onSave={updateInput} value={data.lastName} label='Last name' type='lname' />
+      <Outcome firstName={data.firstName} label='First name' />
+      <Outcome firstName={data.lastName} label='Last name' />
     </div>
   );
 }
