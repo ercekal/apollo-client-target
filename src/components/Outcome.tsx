@@ -5,8 +5,6 @@ interface OutcomeProps {
 }
 
 const Outcome = ({ inputText }: OutcomeProps) => {
-  console.log('inputText: ', inputText);
-  console.log('type: ', typeof inputText);
   return (
     <div>
       {inputText}
