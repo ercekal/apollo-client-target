@@ -8,6 +8,7 @@ import updateInput from '../operations/mutations'
 
 function App() {
   const { data } = useQuery(GET_INPUT);
+  console.log('data: ', data);
 
   return (
     <div className="App">
